@@ -60,3 +60,4 @@ Route::post('/console/types/edit/{type:id}', [TypesController::class, 'edit'])->
 Route::get('/console/types/delete/{type:id}', [TypesController::class, 'delete'])->where('type', '[0-9]+')->middleware('auth');
 
 Route::get('/console/contactrequests/list', [ContactRequestsController::class, 'list'])->middleware('auth');
+Route::get('/console/contactrequests/delete/{contactrequest:id}', [ContactRequestsController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
