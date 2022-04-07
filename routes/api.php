@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactRequestsController;
+use App\Http\Controllers\SkillsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use App\Http\Controllers\ContactRequestsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('/skills', [SkillsController::class, 'getAll']);
 
 Route::get('/contactrequests', [ContactRequestsController::class, 'getAll']);
 Route::post('/contactrequests', [ContactRequestsController::class, 'store']);

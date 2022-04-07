@@ -4,6 +4,7 @@ use App\Models\Project;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ContactRequestsController;
+use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -60,4 +61,11 @@ Route::post('/console/types/edit/{type:id}', [TypesController::class, 'edit'])->
 Route::get('/console/types/delete/{type:id}', [TypesController::class, 'delete'])->where('type', '[0-9]+')->middleware('auth');
 
 Route::get('/console/contactrequests/list', [ContactRequestsController::class, 'list'])->middleware('auth');
-Route::get('/console/contactrequests/delete/{contactrequest:id}', [ContactRequestsController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
+Route::get('/console/contactrequests/delete/{contactrequest:id}', [ContactRequestsController::class, 'delete'])->where('contactrequest', '[0-9]+')->middleware('auth');
+
+Route::get('/console/skills/list', [SkillsController::class, 'list'])->middleware('auth');
+Route::get('/console/skills/delete/{skill:id}', [SkillsController::class, 'delete'])->where('skill', '[0-9]+')->middleware('auth');
+Route::get('/console/skills/add', [SkillsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/skills/add', [SkillsController::class, 'add'])->middleware('auth');
+Route::get('/console/skills/edit/{skill:id}', [SkillsController::class, 'editForm'])->where('skill', '[0-9]+')->middleware('auth');
+Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit'])->where('skill', '[0-9]+')->middleware('auth');
