@@ -12,6 +12,14 @@
 - delete contact request from list page
 - post api to add contact request from react
 
+## education levels
+- model, migration, factory, seeder
+- list page for admin
+- delete education level
+- add page for admin
+- edit page for admin
+- get api to fetch all edication levels
+
 # php-cms-laravel
 
 This repository is copy of the simple [PHP CMS](https://github.com/codeadamca/php-cms) except the CMS has been converted to Laravel. 

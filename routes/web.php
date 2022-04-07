@@ -4,6 +4,7 @@ use App\Models\Project;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ContactRequestsController;
+use App\Http\Controllers\EducationLevelsController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
@@ -69,3 +70,10 @@ Route::get('/console/skills/add', [SkillsController::class, 'addForm'])->middlew
 Route::post('/console/skills/add', [SkillsController::class, 'add'])->middleware('auth');
 Route::get('/console/skills/edit/{skill:id}', [SkillsController::class, 'editForm'])->where('skill', '[0-9]+')->middleware('auth');
 Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit'])->where('skill', '[0-9]+')->middleware('auth');
+
+Route::get('/console/educationlevels/list', [EducationLevelsController::class, 'list'])->middleware('auth');
+Route::get('/console/educationlevels/delete/{education_level:id}', [EducationLevelsController::class, 'delete'])->where('education_level', '[0-9]+')->middleware('auth');
+Route::get('/console/educationlevels/add', [EducationLevelsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/educationlevels/add', [EducationLevelsController::class, 'add'])->middleware('auth');
+Route::get('/console/educationlevels/edit/{education_level:id}', [EducationLevelsController::class, 'editForm'])->where('education_level', '[0-9]+')->middleware('auth');
+Route::post('/console/educationlevels/edit/{education_level:id}', [EducationLevelsController::class, 'edit'])->where('education_level', '[0-9]+')->middleware('auth');
