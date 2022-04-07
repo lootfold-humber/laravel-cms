@@ -1,3 +1,17 @@
+# features added as part of assignment
+
+## skills
+- list page for admin
+- delete skill from list page
+- add page for admin
+- edit page for admin
+- get api to fetch all skills for react
+
+## contact requests
+- list page for admin
+- delete contact request from list page
+- post api to add contact request from react
+
 # php-cms-laravel
 
 This repository is copy of the simple [PHP CMS](https://github.com/codeadamca/php-cms) except the CMS has been converted to Laravel. 
