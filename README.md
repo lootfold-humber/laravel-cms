@@ -1,14 +1,16 @@
 # features added as part of assignment
 
 ## skills
-- list page for admin
+- model, migration, factory, seeder
+- list page for admin (filtered by user id)
 - delete skill from list page
 - add page for admin
 - edit page for admin
 - get api to fetch all skills for react
 
 ## contact requests
-- list page for admin
+- model, migration, factory, seeder
+- list page for admin (filtered by user id)
 - delete contact request from list page
 - post api to add contact request from react
 
@@ -19,6 +21,18 @@
 - add page for admin
 - edit page for admin
 - get api to fetch all edication levels
+
+## education
+- model, migration, factory, seeder
+- list page for admin (filtered by user id)
+- delete education
+- add page for admin
+- edit page for admin
+- get api to fetch all edication
+
+## projects
+- filter list by user id
+- add api to fetch all projects
 
 # php-cms-laravel
 
