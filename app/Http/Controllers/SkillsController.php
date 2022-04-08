@@ -12,7 +12,7 @@ class SkillsController extends Controller
     public function list()
     {
         return view('skills.list', [
-            'skills' => Skill::all()
+            'skills' => Skill::where('user_id', '=', Auth::user()->id)->get()
         ]);
     }
 

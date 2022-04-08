@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactRequestsController extends Controller
 {
@@ -11,7 +12,7 @@ class ContactRequestsController extends Controller
     public function list()
     {
         return view('contactRequests.list', [
-            'contact_requests' => ContactRequest::all()
+            'contact_requests' => ContactRequest::where('user_id', '=', Auth::user()->id)->get()
         ]);
     }
 
@@ -37,6 +38,7 @@ class ContactRequestsController extends Controller
             'name' => 'required',
             'email' => 'required',
             'message' => 'required',
+            'user_id' => 'required',
         ]);
 
         return ContactRequest::create($request->all());

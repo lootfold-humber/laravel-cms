@@ -13,7 +13,7 @@ class EducationController extends Controller
     public function list()
     {
         return view('education.list', [
-            'education' => Education::all()
+            'education' => Education::where('user_id', '=', Auth::user()->id)->get()
         ]);
     }
 
