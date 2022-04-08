@@ -116,4 +116,10 @@ class ProjectsController extends Controller
         return redirect('/console/projects/list')
             ->with('message', 'Project image has been edited!');
     }
+
+    // API -> GET: api/projects
+    public function getAll()
+    {
+        return Project::all();
+    }
 }
