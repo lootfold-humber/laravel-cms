@@ -15,7 +15,6 @@ class EducationLevelSeeder extends Seeder
     public function run()
     {
         EducationLevel::truncate();
-
         EducationLevel::factory()->count(5)->create();
     }
 }

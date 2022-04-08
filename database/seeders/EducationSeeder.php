@@ -15,6 +15,6 @@ class EducationSeeder extends Seeder
     public function run()
     {
         Education::truncate();
-        Education::factory()->count(1)->create();
+        Education::factory()->count(3)->create();
     }
 }
