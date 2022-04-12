@@ -13,7 +13,7 @@ class Skill extends Model
         'name',
         'reference_url',
         'confidence',
-        'image',
+        'logo',
         'user_id',
     ];
 

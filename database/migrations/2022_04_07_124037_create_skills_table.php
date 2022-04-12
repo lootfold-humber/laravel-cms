@@ -18,7 +18,7 @@ class CreateSkillsTable extends Migration
             $table->string('name');
             $table->string('reference_url')->nullable();
             $table->tinyInteger('confidence', false, true);
-            $table->longText('image')->nullable();
+            $table->longText('logo')->nullable();
             $table->foreignId('user_id');
             $table->timestamps();
         });

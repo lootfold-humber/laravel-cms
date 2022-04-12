@@ -71,6 +71,8 @@ Route::get('/console/skills/add', [SkillsController::class, 'addForm'])->middlew
 Route::post('/console/skills/add', [SkillsController::class, 'add'])->middleware('auth');
 Route::get('/console/skills/edit/{skill:id}', [SkillsController::class, 'editForm'])->where('skill', '[0-9]+')->middleware('auth');
 Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit'])->where('skill', '[0-9]+')->middleware('auth');
+Route::get('/console/skills/logo/{skill:id}', [SkillsController::class, 'logoForm'])->where('skill', '[0-9]+')->middleware('auth');
+Route::post('/console/skills/logo/{skill:id}', [SkillsController::class, 'logo'])->where('skill', '[0-9]+')->middleware('auth');
 
 Route::get('/console/educationlevels/list', [EducationLevelsController::class, 'list'])->middleware('auth');
 Route::get('/console/educationlevels/delete/{education_level:id}', [EducationLevelsController::class, 'delete'])->where('education_level', '[0-9]+')->middleware('auth');

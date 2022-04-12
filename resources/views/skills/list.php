@@ -47,6 +47,7 @@
 
         <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
             <tr class="w3-red">
+                <th>Logo</th>
                 <th>Name</th>
                 <th>Reference</th>
                 <th>Confidence</th>
@@ -54,6 +55,11 @@
             </tr>
             <?php foreach ($skills as $skill) : ?>
                 <tr>
+                    <td>
+                        <?php if ($skill->logo) : ?>
+                            <img src="<?= asset('storage/' . $skill->logo) ?>" width="200">
+                        <?php endif; ?>
+                    </td>
                     <td><?= $skill->name ?></td>
                     <td>
                         <a href="<?= $skill->reference_url ?>" target="_blank">
@@ -62,6 +68,8 @@
                     </td>
                     <td><?= $skill->confidence ?></td>
                     <td>
+                        <a href="/console/skills/logo/<?= $skill->id ?>">Logo</a>
+                        &nbsp;|&nbsp;
                         <a href="/console/skills/edit/<?= $skill->id ?>">Edit</a>
                         &nbsp;|&nbsp;
                         <a href="/console/skills/delete/<?= $skill->id ?>">Delete</a>
