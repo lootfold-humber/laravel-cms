@@ -41,6 +41,8 @@
 
     <section class="w3-padding">
 
+        <a href="/console/users/add" class="w3-button w3-green">Add New</a>
+
         <h2>Manage Users</h2>
 
         <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
@@ -50,7 +52,7 @@
                 <th>Email</th>
                 <th>About</th>
                 <th>Created</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
             <?php foreach ($users as $user) : ?>
                 <tr>
@@ -65,17 +67,14 @@
                     <td><?= $user->created_at->format('M j, Y') ?></td>
                     <td>
                         <a href="/console/users/photo/<?= $user->id ?>">Photo</a>
-                        &nbsp;|&nbsp;
+                        |
                         <a href="/console/users/edit/<?= $user->id ?>">Edit</a>
-                        &nbsp;|&nbsp;
+                        |
                         <a href="/console/users/delete/<?= $user->id ?>">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </table>
-
-        <a href="/console/users/add" class="w3-button w3-green">New User</a>
-
     </section>
 
 </body>

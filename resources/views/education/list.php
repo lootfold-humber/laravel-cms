@@ -41,7 +41,7 @@
 
     <section class="w3-padding">
 
-        <a href="/console/education/add" class="w3-button w3-green">New Education</a>
+        <a href="/console/education/add" class="w3-button w3-green">Add New</a>
 
         <h2>Manage Education</h2>
 
@@ -52,7 +52,7 @@
                 <th>Start</th>
                 <th>Completion</th>
                 <th>Level</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
             <?php foreach ($education as $edu) : ?>
                 <tr>
@@ -63,7 +63,7 @@
                     <td><?= $edu->education_level_id ?></td>
                     <td>
                         <a href="/console/education/edit/<?= $edu->id ?>">Edit</a>
-                        &nbsp;|&nbsp;
+                        |
                         <a href="/console/education/delete/<?= $edu->id ?>">Delete</a>
                     </td>
                 </tr>

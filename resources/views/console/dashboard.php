@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="/app.css">
+    <title>My Portfolio</title>
 
-        <script src="/app.js"></script>
-        
-    </head>
-    <body>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/app.css">
 
-        <header class="w3-padding">
+    <script src="/app.js"></script>
 
-            <h1 class="w3-text-red">Portfolio Console</h1>
+</head>
 
-            <?php if(Auth::check()): ?>
-                You are logged in as <?= auth()->user()->first ?> <?= auth()->user()->last ?> | 
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
-            <?php else: ?>
-                <a href="/">Return to My Portfolio</a>
-            <?php endif; ?>
+<body>
 
-        </header>
+    <header class="w3-padding">
 
-        <hr>
+        <h1 class="w3-text-red">Portfolio Console</h1>
 
-        <section class="w3-padding">
+        <?php if (Auth::check()) : ?>
+            You are logged in as <?= auth()->user()->first ?> <?= auth()->user()->last ?> |
+            <a href="/console/logout">Log Out</a> |
+            <a href="/console/dashboard">Dashboard</a> |
+            <a href="/">Website Home Page</a>
+        <?php else : ?>
+            <a href="/">Return to My Portfolio</a>
+        <?php endif; ?>
 
-            <ul id="dashboard">
-                <li><a href="/console/projects/list">Manage Projects</a></li>
-                <li><a href="/console/types/list">Manage Types</a></li>
-                <li><a href="/console/skills/list">Manage Skills</a></li>
-                <li><a href="/console/educationlevels/list">Manage Education Levels</a></li>
-                <li><a href="/console/education/list">Manage Education</a></li>
-                <li><a href="/console/contactrequests/list">View Contact Requests</a></li>
-                <li><a href="/console/users/list">Manage Users</a></li>
-                <li><a href="/console/logout">Log Out</a></li>
-            </ul>
+    </header>
 
-        </section>
+    <hr>
 
-    </body>
+    <section class="w3-padding">
+
+        <ul id="dashboard">
+            <li><a href="/console/types/list">Manage Types</a></li>
+            <li><a href="/console/projects/list">Manage Projects</a></li>
+            <li><a href="/console/educationlevels/list">Manage Education Levels</a></li>
+            <li><a href="/console/education/list">Manage Education</a></li>
+            <li><a href="/console/skills/list">Manage Skills</a></li>
+            <li><a href="/console/contactrequests/list">View Contact Requests</a></li>
+            <li><a href="/console/users/list">Manage Users</a></li>
+            <li><a href="/console/logout">Log Out</a></li>
+        </ul>
+
+    </section>
+
+</body>
+
 </html>

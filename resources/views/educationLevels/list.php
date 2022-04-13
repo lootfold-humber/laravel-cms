@@ -43,19 +43,19 @@
 
         <a href="/console/educationlevels/add" class="w3-button w3-green">Add New</a>
 
-        <h2>View Education Levels</h2>
+        <h2>Manage Education Levels</h2>
 
         <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
             <tr class="w3-red">
                 <th>Name</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
             <?php foreach ($education_levels as $edu) : ?>
                 <tr>
                     <td><?= $edu->name ?></td>
                     <td>
                         <a href="/console/educationlevels/edit/<?= $edu->id ?>">Edit</a>
-                        &nbsp;|&nbsp;
+                        |
                         <a href="/console/educationlevels/delete/<?= $edu->id ?>">Delete</a>
                     </td>
                 </tr>

@@ -36,8 +36,8 @@
             <?= csrf_field() ?>
 
             <div class="w3-margin-bottom">
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" value="<?= old('name') ?>" required>
+                <label class="d-block" for="name">Name:</label>
+                <input class="w3-input" type="text" name="name" id="name" value="<?= old('name') ?>" required>
 
                 <?php if ($errors->first('name')) : ?>
                     <br>

@@ -35,8 +35,6 @@
     <hr>
 
     <section class="w3-padding">
-        <a href="/console/education/list">Back to List</a>
-
         <h2>Add Project</h2>
 
         <form method="post" action="/console/education/add" novalidate class="w3-margin-bottom">
@@ -44,8 +42,8 @@
             <?= csrf_field() ?>
 
             <div class="w3-margin-bottom">
-                <label for="institution">Institution:</label>
-                <input type="text" name="institution" id="institution" value="<?= old('institution') ?>">
+                <label class="d-block" for="institution">Institution:</label>
+                <input class="w3-input" type="text" name="institution" id="institution" value="<?= old('institution') ?>">
 
                 <?php if ($errors->first('institution')) : ?>
                     <br>
@@ -54,8 +52,8 @@
             </div>
 
             <div class="w3-margin-bottom">
-                <label for="field">Field of study:</label>
-                <input type="text" name="field" id="field" value="<?= old('field') ?>">
+                <label class="d-block" for="field">Field of study:</label>
+                <input class="w3-input" type="text" name="field" id="field" value="<?= old('field') ?>">
 
                 <?php if ($errors->first('field')) : ?>
                     <br>
@@ -64,8 +62,8 @@
             </div>
 
             <div class="w3-margin-bottom">
-                <label for="start">Start Year:</label>
-                <input type="text" name="start" id="start" value="<?= old('start') ?>">
+                <label class="d-block" for="start">Start Year:</label>
+                <input class="w3-input" type="text" name="start" id="start" value="<?= old('start') ?>">
 
                 <?php if ($errors->first('start')) : ?>
                     <br>
@@ -74,8 +72,8 @@
             </div>
 
             <div class="w3-margin-bottom">
-                <label for="completion">Completion Year:</label>
-                <input type="text" name="completion" id="completion" value="<?= old('completion') ?>">
+                <label class="d-block" for="completion">Completion Year:</label>
+                <input class="w3-input" type="text" name="completion" id="completion" value="<?= old('completion') ?>">
 
                 <?php if ($errors->first('completion')) : ?>
                     <br>
@@ -84,8 +82,8 @@
             </div>
 
             <div class="w3-margin-bottom">
-                <label for="education_level_id">Type:</label>
-                <select name="education_level_id" id="education_level_id">
+                <label class="d-block" for="education_level_id">Type:</label>
+                <select class="w3-input" name="education_level_id" id="education_level_id">
                     <option selected disabled>-- select --</option>
                     <?php foreach ($levels as $level) : ?>
                         <option value="<?= $level->id ?>" <?= $level->id == old('education_level_id') ? 'selected' : '' ?>>
@@ -99,9 +97,10 @@
                 <?php endif; ?>
             </div>
 
-            <button type="submit" class="w3-button w3-green">Add Project</button>
-
+            <button type="submit" class="w3-button w3-green">Add</button>
         </form>
+
+        <a href="/console/education/list">Back to List</a>
     </section>
 </body>
 

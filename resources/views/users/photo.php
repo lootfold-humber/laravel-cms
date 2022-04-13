@@ -58,7 +58,7 @@
                 <?php endif; ?>
             </div>
 
-            <button type="submit" class="w3-button w3-green">Add photo</button>
+            <button type="submit" class="w3-button w3-green">Save</button>
 
         </form>
 

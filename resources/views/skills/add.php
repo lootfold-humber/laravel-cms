@@ -36,8 +36,8 @@
             <?= csrf_field() ?>
 
             <div class="w3-margin-bottom">
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" value="<?= old('name') ?>" required>
+                <label class="d-block" for="name">Name:</label>
+                <input class="w3-input" type="text" name="name" id="name" value="<?= old('name') ?>" required>
 
                 <?php if ($errors->first('name')) : ?>
                     <br>
@@ -46,8 +46,8 @@
             </div>
 
             <div class="w3-margin-bottom">
-                <label for="reference_url">Reference URL:</label>
-                <input type="url" name="reference_url" id="reference_url" value="<?= old('reference_url') ?>">
+                <label class="d-block" for="reference_url">Reference URL:</label>
+                <input class="w3-input" type="url" name="reference_url" id="reference_url" value="<?= old('reference_url') ?>">
 
                 <?php if ($errors->first('reference_url')) : ?>
                     <br>
@@ -56,8 +56,8 @@
             </div>
 
             <div class="w3-margin-bottom">
-                <label for="confidence">Confidence:</label>
-                <input type="number" name="confidence" id="confidence" value="<?= old('confidence') ?>" required>
+                <label class="d-block" for="confidence">Confidence:</label>
+                <input class="w3-input" type="number" name="confidence" id="confidence" value="<?= old('confidence') ?>" required>
 
                 <?php if ($errors->first('confidence')) : ?>
                     <br>
@@ -65,10 +65,10 @@
                 <?php endif; ?>
             </div>
 
-            <button type="submit" class="w3-button w3-green">Add Skill</button>
+            <button type="submit" class="w3-button w3-green">Add</button>
         </form>
 
-        <a href="/console/skills/list">Back to Skills List</a>
+        <a href="/console/skills/list">Back to List</a>
     </section>
 </body>
 
