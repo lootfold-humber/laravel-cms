@@ -25,10 +25,10 @@ class ContactRequestsController extends Controller
             ->with('message', 'Contact Request has been deleted!');
     }
 
-    // API -> GET: api/contactrequests
-    public function getAll()
+    // API -> GET: api/contactrequests/{userId}
+    public function getAll($userId)
     {
-        return ContactRequest::all();
+        return ContactRequest::where('user_id', '=', $userId)->get();;
     }
 
     // API -> POST: api/contactrequests

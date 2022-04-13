@@ -117,9 +117,9 @@ class ProjectsController extends Controller
             ->with('message', 'Project image has been edited!');
     }
 
-    // API -> GET: api/projects
-    public function getAll()
+    // API -> GET: api/projects/{userId}
+    public function getAll($userId)
     {
-        return Project::all();
+        return Project::where('user_id', '=', $userId)->get();;
     }
 }

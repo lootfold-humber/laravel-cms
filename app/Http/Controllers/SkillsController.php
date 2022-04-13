@@ -103,9 +103,9 @@ class SkillsController extends Controller
             ->with('message', 'Skill logo has been edited!');
     }
 
-    // API -> GET: api/skills
-    public function getAll()
+    // API -> GET: api/skills/{userId}
+    public function getAll($userId)
     {
-        return Skill::all();
+        return Skill::where('user_id', '=', $userId)->get();
     }
 }

@@ -19,16 +19,16 @@ use App\Http\Controllers\SkillsController;
 |
 */
 
-Route::get('/skills', [SkillsController::class, 'getAll']);
+Route::get('/skills/{userId:id}', [SkillsController::class, 'getAll'])->where('type', '[0-9]+');
 
 Route::get('/educationlevels', [EducationLevelsController::class, 'getAll']);
 
-Route::get('/education', [EducationController::class, 'getAll']);
+Route::get('/education/{userId:id}', [EducationController::class, 'getAll'])->where('type', '[0-9]+');
 
-Route::get('/projects', [ProjectsController::class, 'getAll']);
+Route::get('/projects/{userId:id}', [ProjectsController::class, 'getAll'])->where('type', '[0-9]+');
 
-Route::get('/contactrequests', [ContactRequestsController::class, 'getAll']);
-Route::post('/contactrequests', [ContactRequestsController::class, 'store']);
+Route::get('/contactrequests/{userId:id}', [ContactRequestsController::class, 'getAll'])->where('type', '[0-9]+');
+Route::post('/contactrequests', [ContactRequestsController::class, 'store'])->where('type', '[0-9]+');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

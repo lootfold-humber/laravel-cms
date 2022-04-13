@@ -90,9 +90,9 @@ class EducationController extends Controller
             ->with('message', 'Education has been deleted!');
     }
 
-    // API -> GET: api/education
-    public function getAll()
+    // API -> GET: api/education/{userId}
+    public function getAll($userId)
     {
-        return Education::all();
+        return Education::where('user_id', '=', $userId)->get();;
     }
 }
