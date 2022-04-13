@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -16,16 +17,14 @@ class UsersController extends Controller
         return view('users.list', [
             'users' => User::all()
         ]);
-
     }
 
     public function addForm()
     {
 
         return view('users.add');
-
     }
-    
+
     public function add()
     {
 
@@ -45,7 +44,6 @@ class UsersController extends Controller
 
         return redirect('/console/users/list')
             ->with('message', 'User has been added!');
-
     }
 
     public function editForm(User $user)
@@ -54,7 +52,6 @@ class UsersController extends Controller
         return view('users.edit', [
             'user' => $user,
         ]);
-
     }
 
     public function edit(User $user)
@@ -75,29 +72,50 @@ class UsersController extends Controller
         $user->last = $attributes['last'];
         $user->email = $attributes['email'];
 
-        if($attributes['password']) $user->password = $attributes['password'];
+        if ($attributes['password']) $user->password = $attributes['password'];
 
         $user->save();
 
         return redirect('/console/users/list')
             ->with('message', 'User has been edited!');
+    }
 
+    public function photoForm(User $user)
+    {
+        return view('users.photo', [
+            'user' => $user,
+        ]);
+    }
+
+    public function photo(User $user)
+    {
+
+        $attributes = request()->validate([
+            'photo' => 'required|image',
+        ]);
+
+        Storage::delete($user->photo);
+
+        $path = request()->file('photo')->store('users');
+
+        $user->photo = $path;
+        $user->save();
+
+        return redirect('/console/users/list')
+            ->with('message', 'User photo has been edited!');
     }
 
     public function delete(User $user)
     {
 
-        if($user->id == auth()->user()->id)
-        {
+        if ($user->id == auth()->user()->id) {
             return redirect('/console/users/list')
-                ->with('message', 'Cannot delete your own user account!');        
+                ->with('message', 'Cannot delete your own user account!');
         }
-        
+
         $user->delete();
 
         return redirect('/console/users/list')
-            ->with('message', 'User has been deleted!');                
-        
+            ->with('message', 'User has been deleted!');
     }
-    
 }

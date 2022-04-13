@@ -54,6 +54,8 @@ Route::post('/console/users/add', [UsersController::class, 'add'])->middleware('
 Route::get('/console/users/edit/{user:id}', [UsersController::class, 'editForm'])->where('user', '[0-9]+')->middleware('auth');
 Route::post('/console/users/edit/{user:id}', [UsersController::class, 'edit'])->where('user', '[0-9]+')->middleware('auth');
 Route::get('/console/users/delete/{user:id}', [UsersController::class, 'delete'])->where('user', '[0-9]+')->middleware('auth');
+Route::get('/console/users/photo/{user:id}', [UsersController::class, 'photoForm'])->where('user', '[0-9]+')->middleware('auth');
+Route::post('/console/users/photo/{user:id}', [UsersController::class, 'photo'])->where('user', '[0-9]+')->middleware('auth');
 
 Route::get('/console/types/list', [TypesController::class, 'list'])->middleware('auth');
 Route::get('/console/types/add', [TypesController::class, 'addForm'])->middleware('auth');
