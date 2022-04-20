@@ -128,4 +128,10 @@ class UsersController extends Controller
     {
         return User::all();
     }
+
+    // API -> GET: api/skills/{userId}
+    public function getById($userId)
+    {
+        return User::where('id', '=', $userId)->get();
+    }
 }

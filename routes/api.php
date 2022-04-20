@@ -21,6 +21,7 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/users', [UsersController::class, 'getAll']);
+Route::get('/users/{userId:id}', [UsersController::class, 'getById'])->where('type', '[0-9]+');
 
 Route::get('/skills/{userId:id}', [SkillsController::class, 'getAll'])->where('type', '[0-9]+');
 
