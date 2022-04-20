@@ -7,6 +7,7 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\EducationLevelsController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\SkillsController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ use App\Http\Controllers\SkillsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('/users', [UsersController::class, 'getAll']);
 
 Route::get('/skills/{userId:id}', [SkillsController::class, 'getAll'])->where('type', '[0-9]+');
 

@@ -24,7 +24,7 @@
 -   delete education level
 -   add page for admin
 -   edit page for admin
--   get api to fetch all edication levels
+-   get api to fetch all education levels
 
 ## education
 
@@ -33,7 +33,7 @@
 -   delete education
 -   add page for admin
 -   edit page for admin
--   get api to fetch all edication
+-   get api to fetch all education
 
 ## projects
 
@@ -44,6 +44,7 @@
 
 -   add/edit user photo
 -   add about column for user
+-   get api to fetch all users
 
 # php-cms-laravel
 

@@ -73,6 +73,16 @@
             </div>
 
             <div class="w3-margin-bottom">
+                <label class="d-block" for="about">About:</label>
+                <input class="w3-input" type="text" name="about" id="about" value="<?= old('about') ?>" required>
+
+                <?php if ($errors->first('about')) : ?>
+                    <br>
+                    <span class="w3-text-red"><?= $errors->first('about'); ?></span>
+                <?php endif; ?>
+            </div>
+
+            <div class="w3-margin-bottom">
                 <label class="d-block" for="password">Password:</label>
                 <input class="w3-input" type="password" name="password" id="password">
 

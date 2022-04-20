@@ -31,6 +31,7 @@ class UsersController extends Controller
         $attributes = request()->validate([
             'first' => 'required',
             'last' => 'required',
+            'about' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
         ]);
@@ -39,6 +40,7 @@ class UsersController extends Controller
         $user->first = $attributes['first'];
         $user->last = $attributes['last'];
         $user->email = $attributes['email'];
+        $user->about = $attributes['about'];
         $user->password = $attributes['password'];
         $user->save();
 
@@ -60,6 +62,7 @@ class UsersController extends Controller
         $attributes = request()->validate([
             'first' => 'required',
             'last' => 'required',
+            'about' => 'required',
             'email' => [
                 'required',
                 'email',
@@ -71,6 +74,7 @@ class UsersController extends Controller
         $user->first = $attributes['first'];
         $user->last = $attributes['last'];
         $user->email = $attributes['email'];
+        $user->about = $attributes['about'];
 
         if ($attributes['password']) $user->password = $attributes['password'];
 
@@ -117,5 +121,11 @@ class UsersController extends Controller
 
         return redirect('/console/users/list')
             ->with('message', 'User has been deleted!');
+    }
+
+    // API -> GET: api/skills/{userId}
+    public function getAll()
+    {
+        return User::all();
     }
 }
